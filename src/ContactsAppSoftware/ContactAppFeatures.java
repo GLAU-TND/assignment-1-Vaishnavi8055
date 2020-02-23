@@ -90,33 +90,8 @@ public class ContactAppFeatures implements Interface2 {
 
    @Override
    public void searchForContact() {
-      int count = 0;
-      if (myContactBook.size() >= 0) {
-         System.out.println("You could search for a contact from their first names: ");
-         String firstName = sc.next();
-         for (int k = 0; k < myContactBook.size(); k++)
-            if (myContactBook.get(k).getFirstName().equals(firstName)) {
-               count++;
-               matched.add(k);
-            }
-         System.out.println(count + " match found!");
-         if (matched.size() > 0)
-            for (int m = 0; m < matched.size(); m++) {
 
-               System.out.println("-------- * -------- * -------- * --------");
-               System.out.println("First Name: " + myContactBook.get(matched.get(m)).getFirstName());
-               System.out.println("Last Name: " + myContactBook.get(matched.get(m)).getLastName());
-               System.out.println("Contact Number(s): " + myContactBook.get(matched.get(m)).getContactNumbers());
-               System.out.println("Email Address: " + myContactBook.get(matched.get(m)).getEmailAddress());
-               System.out.println("-------- * -------- * -------- * --------");
-            }
-      } else {
-
-         System.out.println("..........SORRY NO RESULTS FOUND............");
-      }
    }
-
-
 
    @Override
    public void deleteContact() {
