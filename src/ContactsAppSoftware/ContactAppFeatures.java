@@ -12,6 +12,13 @@ public class ContactAppFeatures implements Interface2 {
    @Override
    public void addNewContact(){
        ArrayList<String> ContactNumbers = new ArrayList<>();
+      String firstName = "";
+      String lastName = "";
+      String emailAddress = "";
+      String phoneNumber = "";
+      System.out.println("Please enter the name of the Person");
+      System.out.println("Enter first Name: ");
+      firstName = sc.next();
    }
 
    @Override
