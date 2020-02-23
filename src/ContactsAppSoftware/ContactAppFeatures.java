@@ -85,6 +85,9 @@ public class ContactAppFeatures implements Interface2 {
       }
    }
 
+    ArrayList<Integer> matched = new ArrayList<>();
+
+
    @Override
    public void searchForContact() {
 
