@@ -28,7 +28,11 @@ public class ContactAppFeatures implements Interface2 {
             do {
                System.out.println("Enter your phone Number");
                phoneNumber = sc.next();
-
+                if (regexFeature.isphoneNumber(phoneNumber)) {
+                    ContactNumbers.add(phoneNumber);
+                } else {
+                    System.out.println("..Syntax Error!..");
+                    break;
             }
          }
       }
