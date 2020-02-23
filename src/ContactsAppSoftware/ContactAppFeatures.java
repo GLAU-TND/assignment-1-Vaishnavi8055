@@ -120,8 +120,24 @@ public class ContactAppFeatures implements Interface2 {
 
    @Override
    public void deleteContact() {
-
+      int no = 1;
+      if (myContactBook.size() > 0) {
+         System.out.println("Here are all your Contacts : ");
+         for (int s = 0; s < myContactBook.size(); s++) {
+            System.out.println(no + ". " + myContactBook.get(s).getFirstName() + " " + myContactBook.get(s).getLastName());
+            no++;
+         }
+         int toDelete = sc.nextInt();
+         System.out.println("Press the number against the contact to delete it: " + toDelete);
+         System.out.println(myContactBook.get(toDelete - 1).getFirstName() + " " + myContactBook.get(toDelete - 1).getLastName() + "'s " + "contact deleted from list!");
+         myContactBook.remove(toDelete - 1);
+         myContactBook.trimToSize();
+         matched.trimToSize();
+      } else {
+         System.out.println("..........SORRY NO RESULTS FOUND............");
+      }
    }
+
 
    @Override
    public void exitContactApp() {
