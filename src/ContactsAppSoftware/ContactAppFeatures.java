@@ -10,8 +10,8 @@ public class ContactAppFeatures implements Interface2 {
    ArrayList<Person> myContactBook=new ArrayList<>();
 
    @Override
-   public void addNewContact(){
-       ArrayList<String> ContactNumbers = new ArrayList<>();
+   public void addNewContact() {
+      ArrayList<String> ContactNumbers = new ArrayList<>();
       String firstName = "";
       String lastName = "";
       String emailAddress = "";
@@ -20,14 +20,19 @@ public class ContactAppFeatures implements Interface2 {
       System.out.println("Enter first Name: ");
       firstName = sc.next();
 
-      if(regexFeature.isFirstName(firstName)){
+      if (regexFeature.isFirstName(firstName)) {
          System.out.println("Enter Last Name: ");
          lastName = sc.next();
          if (regexFeature.isLastName(lastName)) {
+            char reply;
+            do {
+               System.out.println("Enter your phone Number");
+               phoneNumber = sc.next();
 
+            }
          }
+      }
    }
-
    @Override
    public void viewAllContact() {
 
