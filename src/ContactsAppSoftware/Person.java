@@ -2,7 +2,7 @@ package ContactsAppSoftware;
 
 import java.util.ArrayList;
 
-public class Person implements Interface1{
+public class Person implements Interface1 {
     private String FirstName;
     private String LastName;
     private String EmailAddress;
@@ -15,18 +15,22 @@ public class Person implements Interface1{
         this.ContactNumbers = ContactNumbers;
     }
 
+    @Override
     public String getFirstName() {
         return FirstName;
     }
 
+    @Override
     public String getLastName() {
         return LastName;
     }
 
+    @Override
     public String getEmailAddress() {
         return EmailAddress;
     }
 
+    @Override
     public ArrayList<String> getContactNumbers() {
         return ContactNumbers;
     }
