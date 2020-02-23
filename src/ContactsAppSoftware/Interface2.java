@@ -6,4 +6,5 @@ public interface Interface2 {
 
      void addNewContact();
      void viewAllContact();
+     void searchForContact();
 }
