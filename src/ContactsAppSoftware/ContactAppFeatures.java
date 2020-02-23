@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContactAppFeatures implements Interface2 {
-   Scanner sc=new Scanner(System.in);
-   RegexFeature regexFeature=new RegexFeature();
+   Scanner sc = new Scanner(System.in);
+   RegexFeature regexFeature = new RegexFeature();
 
-   ArrayList<Person> myContactBook=new ArrayList<>();
+   ArrayList<Person> myContactBook = new ArrayList<>();
 
    @Override
    public void addNewContact() {
@@ -43,18 +43,55 @@ public class ContactAppFeatures implements Interface2 {
             if (reply1 == 'y') {
                System.out.println("Enter Your EmailAddress");
                emailAddress = sc.next();
-            }
+               if (regexFeature.isEmailAddress(emailAddress)) {
+                  System.out.println("Email Address: " + emailAddress);
 
+                  if (regexFeature.isFirstName(firstName) && regexFeature.isLastName(lastName) && regexFeature.isEmailAddress(emailAddress) && regexFeature.isphoneNumber(phoneNumber)) {
+
+                     Person person = new Person(firstName, lastName, emailAddress, ContactNumbers);
+                     myContactBook.add(person);
+                  } else {
+                     System.out.println("\n..Please Enter Correct Name , PhoneNumber , email id - Syntax Error!..");
+                  }
+               } else {
+                  System.out.println("..Syntax Error!..");
+               }
+            }
+         } else {
+            System.out.println("..Syntax Error!..");
          }
+      } else {
+         System.out.println("..Syntax Error!..");
       }
    }
    @Override
    public void viewAllContact() {
-
+      if (myContactBook.size() == 0) {
+         System.out.println("-------- * -------- * EMPTY - No Contacts yet *-------- * --------");
+      } else {
+         System.out.println("---Here are all your contacts---\n" +
+                 "-------- * -------- * -------- * --------");
+         for (int k = 0; k < myContactBook.size(); k++) {
+            if (k != 0) {
+               System.out.println("-------- * -------- **-------- * --------");
+            }
+            System.out.println("FirstName :" + myContactBook.get(k).getFirstName());
+            System.out.println("Last Name :" + myContactBook.get(k).getLastName());
+            System.out.println("Email Address :" + myContactBook.get(k).getEmailAddress());
+            System.out.println("Contacts Numbers: " + myContactBook.get(k).getContactNumbers());
+            System.out.println();
+         }
+         System.out.println("-------- * -------- * -------- * --------");
+      }
    }
 
    @Override
    public void searchForContact() {
+
+   }
+
+   @Override
+   public void deleteContact() {
 
    }
 
