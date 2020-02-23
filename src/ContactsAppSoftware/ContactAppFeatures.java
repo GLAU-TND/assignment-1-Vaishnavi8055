@@ -14,7 +14,7 @@ public class ContactAppFeatures implements Interface2 {
         ArrayList<String> ContactNumbers = new ArrayList<>();
         String firstName = "";
         String lastName = "";
-        String emailAddress = "";
+        String emailAddress = "---";
         String phoneNumber = "";
         System.out.println("Please enter the name of the Person");
         System.out.println("Enter first Name: ");
@@ -36,8 +36,7 @@ public class ContactAppFeatures implements Interface2 {
                     }
                     System.out.println("Would you like to add another contact number? (y/n): ");
                     reply = sc.next().toLowerCase().charAt(0);
-                }
-                while (reply == 'y');
+                } while (reply == 'y');
                 System.out.println("Would you like to add email address? (y/n): ");
                 char reply1 = sc.next().toLowerCase().charAt(0);
                 if (reply1 == 'y') {
@@ -45,24 +44,25 @@ public class ContactAppFeatures implements Interface2 {
                     emailAddress = sc.next();
                     if (regexFeature.isEmailAddress(emailAddress)) {
                         System.out.println("Email Address: " + emailAddress);
-
-                        if (regexFeature.isFirstName(firstName) && regexFeature.isLastName(lastName) && regexFeature.isEmailAddress(emailAddress) && regexFeature.isphoneNumber(phoneNumber)) {
-
-                            Person person = new Person(firstName, lastName, emailAddress, ContactNumbers);
-                            myContactBook.add(person);
-                        } else {
-                            System.out.println("\n..Please Enter Correct Name , PhoneNumber , email id - Syntax Error!..");
-                        }
-                    } else {
-                        System.out.println("..Syntax Error!..");
                     }
                 }
-            } else {
-                System.out.println("..Syntax Error!..");
-            }
-        } else {
+                    else{
+                        System.out.println("Email Address: " + emailAddress);
+                    }
+                    if (regexFeature.isFirstName(firstName) && regexFeature.isLastName(lastName) && regexFeature.isEmailAddress(emailAddress) && regexFeature.isphoneNumber(phoneNumber)) {
+                        Person person = new Person(firstName, lastName, emailAddress, ContactNumbers);
+                        myContactBook.add(person);
+                    } else {
+                        System.out.println("\n..Please Enter Correct Name , PhoneNumber , email id - Syntax Error!..");
+                    }
+                } else {
+                    System.out.println("..Syntax Error!..");
+                }
+            }else {
             System.out.println("..Syntax Error!..");
+
         }
+
     }
 
     @Override
