@@ -23,7 +23,9 @@ public class ContactAppFeatures implements Interface2 {
       if(regexFeature.isFirstName(firstName)){
          System.out.println("Enter Last Name: ");
          lastName = sc.next();
-      }
+         if (regexFeature.isLastName(lastName)) {
+
+         }
    }
 
    @Override
