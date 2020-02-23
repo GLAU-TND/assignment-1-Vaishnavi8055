@@ -11,7 +11,7 @@ public class ContactAppFeatures implements Interface2 {
 
    @Override
    public void addNewContact(){
-
+       ArrayList<String> ContactNumbers = new ArrayList<>();
    }
 
    @Override
