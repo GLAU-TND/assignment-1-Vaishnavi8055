@@ -117,7 +117,6 @@ int count = 0;
     }
 
 }
-    }
 
     @Override
     public void deleteContact() {
